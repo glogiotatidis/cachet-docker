@@ -9,7 +9,7 @@ To run Cachet you will need to populate APP_KEY environment variable with an
 Application Key. To get a randomly generated key run
 
 ```shell
-php artisan key:generate
+docker run -t -i cachet:2.2.4 php artisan key:generate
 ```
 
 The key is base64 and you need to supply the whole text, including the base64
