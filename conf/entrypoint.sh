@@ -4,4 +4,4 @@ php artisan app:install
 php artisan config:cache
 chmod -R 777 storage
 chown www-data.www-data -R /var/www/html
-exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf

@@ -6,9 +6,11 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
     nginx ca-certificates php5-fpm=5.* php5-curl php5-readline php5-mcrypt \
     php5-mysql php5-apcu php5-cli php5-gd php5-mysql php5-pgsql php5-sqlite \
     wget sqlite git libsqlite3-dev postgresql-client mysql-client curl \
-    supervisor cron unzip gettext-base && \
+    supervisor cron unzip gettext-base python-pip && \
     apt-get clean && apt-get autoremove -q && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/*
+
+RUN pip install supervisor-stdout
 
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf
 
