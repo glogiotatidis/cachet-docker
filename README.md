@@ -1,6 +1,10 @@
 Cachet Docker Image
 ===================
 
+This is docker image to run [Cachet](http://cachethq.io/) open-source status
+page. It's engineered to bundle everything needed (nginx, cron, php-fpm) into
+the same image to allow easier deployments.
+
 
 Get an application key
 ======================
