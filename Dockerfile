@@ -17,7 +17,7 @@ WORKDIR /var/www/html/
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php
 
-ENV CACHET_VERSION v2.2.2
+ENV CACHET_VERSION v2.2.4
 RUN wget https://github.com/cachethq/Cachet/archive/${CACHET_VERSION}.tar.gz && \
     tar xzvf ${CACHET_VERSION}.tar.gz --strip-components=1 && \
     chown -R www-data /var/www/html && \
@@ -31,6 +31,8 @@ COPY conf/nginx.conf /nginx.conf
 COPY conf/env.docker /var/www/html/env.docker
 COPY conf/crontab /etc/cron.d/artisan-schedule
 COPY conf/entrypoint.sh /entrypoint.sh
+
+RUN touch .env
 
 RUN chmod 0644 /etc/cron.d/artisan-schedule &&\
     touch /var/log/cron.log
